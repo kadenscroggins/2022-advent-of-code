@@ -1,15 +1,16 @@
 with open('input.txt') as f:
     lines = f.readlines()
 
-biggest = 0
+elves = []
 calories = 0
 
 for line in lines:
     if (line == "\n"):
-        if calories > biggest:
-            biggest = calories
+        elves.append(calories)
         calories = 0
     else:
         calories += int(line)
 
-print(biggest)
+elves.sort()
+print('Part 1:', elves[-1])
+print('Part 2:', elves[-1] + elves[-2] + elves[-3])
