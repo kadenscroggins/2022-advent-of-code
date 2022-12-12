@@ -7,7 +7,21 @@ def priority(item):
 with open('input.txt') as F:
     LINES = F.readlines()
 
+letters = []
+
 for LINE in LINES:
     LEFT = LINE[0: int(len(LINE) / 2)]
     RIGHT = LINE[int(len(LINE) / 2): int(len(LINE))]
-    print(LEFT, RIGHT)
+    for LETTER in LEFT:
+        if LETTER in RIGHT:
+            letters.append(LETTER)
+            break
+
+priority_sum = 0
+
+for LETTER in letters:
+    print("Letter:", LETTER, priority(LETTER))
+    priority_sum += priority(LETTER)
+
+
+print("Sum of priorities:", priority_sum)
