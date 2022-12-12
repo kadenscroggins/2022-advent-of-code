@@ -20,8 +20,7 @@ for LINE in LINES:
 priority_sum = 0
 
 for LETTER in letters:
-    print("Letter:", LETTER, priority(LETTER))
+    # print("Letter:", LETTER, priority(LETTER))
     priority_sum += priority(LETTER)
-
 
 print("Sum of priorities:", priority_sum)
